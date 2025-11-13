@@ -1,0 +1,80 @@
+/* Animation & transitions */
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Hero Section Background */
+.hero-bg {
+    background-image: url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1600&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 90vh;
+  }
+  
+  /* Optional: dark overlay for text contrast */
+  .hero-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  .hero-bg .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+.animate-fade-in {
+    animation: fade-in 1s ease-out;
+}
+
+/* Scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Form styles (contact-form) */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #3b82f6; /* blue-500 */
+    box-shadow: 0 0 6px rgba(59, 130, 246, 0.3);
+}
+
+.cta-btn {
+    transition: all 0.3s ease;
+}
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-card,
+.gallery-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover,
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
