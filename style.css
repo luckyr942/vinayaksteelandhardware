@@ -1,4 +1,4 @@
-/* Animation & transitions */
+/* Animation & transitions
 @keyframes fade-in {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -77,4 +77,80 @@ html {
 .gallery-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+} */
+html, body {
+    overflow-x: hidden !important;
+}
+
+/* Hero Section */
+.hero-bg {
+    background-image: url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1600&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 90vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+.hero-bg .container {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+}
+
+/* Animations */
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fade-in 1s ease-out;
+}
+
+/* Contact form */
+.contact-form input,
+.contact-form textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Cards */
+.product-card,
+.gallery-item {
+    transition: all 0.3s ease;
+    max-width: 100%;
+}
+
+.product-card:hover,
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* iframe fix */
+iframe {
+    max-width: 100% !important;
+}
+
+/* CTAs */
+.cta-btn {
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
 }
